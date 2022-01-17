@@ -56,7 +56,7 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 	} else if ok {
 		// resolve the dependency to copy into the layer
 
-		dependencyList := []string{"java-cfenv", "java-cfenv-boot", "java-cfenv-jdbc"}
+		dependencyList := []string{"java-cfenv", "java-cfenv-boot", "java-cfenv-jdbc", "spring-boot"}
 
 		for _, dependency := range dependencyList {
 			dep, err := dr.Resolve(dependency, "")
