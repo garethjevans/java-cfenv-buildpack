@@ -55,16 +55,21 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 		return libcnb.BuildResult{}, fmt.Errorf("unable to resolve java-cfenv-buildpack plan entry\n%w", err)
 	} else if ok {
 		// resolve the dependency to copy into the layer
-		dep, err := dr.Resolve("java-cfenv", "")
-		if err != nil {
-			return libcnb.BuildResult{}, fmt.Errorf("unable to find dependency\n%w", err)
-		}
 
-		ja, be := NewJavaDependency(dep, dc)
-		ja.Logger = b.Logger
-		result.Layers = append(result.Layers, ja)
-		if be.Name != "" {
-			result.BOM.Entries = append(result.BOM.Entries, be)
+		dependencyList := []string{"java-cfenv", "java-cfenv-boot", "java-cfenv-jdbc"}
+
+		for _, dependency := range dependencyList {
+			dep, err := dr.Resolve(dependency, "")
+			if err != nil {
+				return libcnb.BuildResult{}, fmt.Errorf("unable to find dependency\n%w", err)
+			}
+
+			ja, be := NewJavaDependency(dep, dc)
+			ja.Logger = b.Logger
+			result.Layers = append(result.Layers, ja)
+			if be.Name != "" {
+				result.BOM.Entries = append(result.BOM.Entries, be)
+			}
 		}
 	}
 

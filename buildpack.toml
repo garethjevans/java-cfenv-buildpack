@@ -38,13 +38,41 @@ api = "0.7"
     name = "BP_JAVA_CFENV_ENABLE"
 
   [[metadata.dependencies]]
+    cpes = ["cpe:2.3:a:io.pivotal:java-cfenv-boot:2.4.0:*:*:*:*:*:*:*"]
+    id = "java-cfenv-boot"
+    name = "java-cfenv-boot"
+    purl = "pkg:generic/java-cfenv-boot@2.4.0"
+    sha256 = "ee8d3b567e8806a0f16ec8aa7363c9e5857518f75698d18d6e310318e2b002c7"
+    stacks = ["io.buildpacks.stacks.bionic"]
+    uri = "https://repo1.maven.org/maven2/io/pivotal/cfenv/java-cfenv-boot/2.4.0/java-cfenv-boot-2.4.0.jar"
+    version = "2.4.0"
+
+    [[metadata.dependencies.licenses]]
+      type = "Apache-2.0"
+      uri = "https://github.com/pivotal-cf/java-cfenv/blob/main/LICENSE"
+  
+  [[metadata.dependencies]]
     cpes = ["cpe:2.3:a:io.pivotal:java-cfenv:2.4.0:*:*:*:*:*:*:*"]
     id = "java-cfenv"
     name = "java-cfenv"
     purl = "pkg:generic/java-cfenv@2.4.0"
-    sha256 = "ee8d3b567e8806a0f16ec8aa7363c9e5857518f75698d18d6e310318e2b002c7"
+    sha256 = "1d65894c92e54c1dadc95021eda3a4eed927f85ce9346ea80be832353090a367"
     stacks = ["io.buildpacks.stacks.bionic"]
-    uri = "https://repo1.maven.org/maven2/io/pivotal/cfenv/java-cfenv-boot/2.4.0/java-cfenv-boot-2.4.0.jar"
+    uri = "https://repo1.maven.org/maven2/io/pivotal/cfenv/java-cfenv/2.4.0/java-cfenv-2.4.0.jar"
+    version = "2.4.0"
+
+    [[metadata.dependencies.licenses]]
+      type = "Apache-2.0"
+      uri = "https://github.com/pivotal-cf/java-cfenv/blob/main/LICENSE"
+  
+  [[metadata.dependencies]]
+    cpes = ["cpe:2.3:a:io.pivotal:java-cfenv-jdbc:2.4.0:*:*:*:*:*:*:*"]
+    id = "java-cfenv-jdbc"
+    name = "java-cfenv-jdbc"
+    purl = "pkg:generic/java-cfenv-jdbc@2.4.0"
+    sha256 = "c521b204de3466538082eb8ccc43882225d5b2000c4454f8eca5ab1e065a55bd"
+    stacks = ["io.buildpacks.stacks.bionic"]
+    uri = "https://repo1.maven.org/maven2/io/pivotal/cfenv/java-cfenv-jdbc/2.4.0/java-cfenv-jdbc-2.4.0.jar"
     version = "2.4.0"
 
     [[metadata.dependencies.licenses]]
